@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verlai · IA sob medida para negócios reais</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjMzLjYwcHQiIGhlaWdodD0iMTYyLjAwcHQiIHZpZXdCb3g9IjEyLjU0OCAxMS41NDggMjMzLjYwNCAxNjIuMDA0Ij4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSIjMDIzMDQ3IiBkPSJNIDEwMy42NDg0MzggMTY0Ljc2MTcxOSBMIDEyNC42MDU0NjkgMTY0LjgwODU5NCBMIDEzNy41ODk4NDQgMTQxLjY2NDA2MiBDIDE0MS45MzM1OTQgMTM0LjAzMTI1IDE0Ni4zMjgxMjUgMTI2LjI2NTYyNSAxNTAuNzY1NjI1IDExOC42MDE1NjIgTCAxNzMuNTY2NDA2IDc4LjE2NDA2MiBMIDE3Ni45NTMxMjUgNzIuMzc1IEwgMTU2LjYxMzI4MSA3Mi40MTQwNjIgTCAxNDYuNDE0MDYyIDkwLjMzMjAzMSBDIDE0My4wNzgxMjUgOTYuNzU3ODEyIDEzOS43MTA5MzggMTAyLjQ0OTIxOSAxMzYuMTY0MDYyIDEwOC42MDU0NjkgQyAxMzIuNjM2NzE5IDExNC43MjY1NjIgMTI5LjUzNTE1NiAxMjAuNzUzOTA2IDEyNS45MTQwNjIgMTI2Ljg5NDUzMSBDIDEyNC4wNjY0MDYgMTMwLjAyNzM0NCAxMjIuNDEwMTU2IDEzMi45MzM1OTQgMTIwLjY3OTY4OCAxMzUuOTMzNTk0IEwgMTE1LjI2NTYyNSAxNDQuODY3MTg4IEMgMTEzLjg2MzI4MSAxNDMuNDU3MDMxIDY1LjkzMzU5NCA2MC4wMTE3MTkgNjIuMzY3MTg4IDUzLjQ4MDQ2OSBDIDYwLjg2MzI4MSA1MC43MjY1NjIgNTUuMTk1MzEyIDQxLjY4MzU5NCA1NS4wNjI1IDM5LjkxNDA2MiBMIDkwLjU4OTg0NCAzOS44MzIwMzEgTCAxMTUuMjY1NjI1IDgxLjE1NjI1IEwgMTI0Ljk0OTIxOSA2My41ODIwMzEgTCAxMDEuODE2NDA2IDIyLjg5ODQzOCBDIDk5Ljk4MDQ2OSAxOS41ODIwMzEgOTkuNTM1MTU2IDIwLjM0NzY1NiA5NS4yMTQ4NDQgMjAuMzMyMDMxIEMgNzAuNTg5ODQ0IDIwLjI1IDQ1Ljg5MDYyNSAyMC4yNSAyMS4yNjk1MzEgMjAuNDIxODc1IEMgMjEuMDI3MzQ0IDIyLjY1MjM0NCAxMDEuNjU2MjUgMTYxLjMwODU5NCAxMDMuNjQ4NDM4IDE2NC43NjE3MTkgIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgZmlsbD0iIzAyMzA0NyIgZD0iTSAxNjEuMjA3MDMxIDY0LjkxMDE1NiBMIDE4OC4yNjk1MzEgNjUuMDc4MTI1IEMgMTg4LjkwMjM0NCA2Ny4wMDM5MDYgMTM3Ljc2MTcxOSAxNTUuNjMyODEyIDEzMi41MjM0MzggMTY0LjkwMjM0NCBMIDE1NC45NDE0MDYgMTY0Ljg2MzI4MSBMIDIyMi4yNzczNDQgNDYuOTk2MDk0IEwgMTcxLjIwMzEyNSA0Ni44NjMyODEgWiBNIDE2MS4yMDcwMzEgNjQuOTEwMTU2ICIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiM5NEQyQkQiIGQ9Ik0gMTI5LjE0NDUzMSAxMDYuMDc4MTI1IEwgMTI5LjYxMzI4MSAxMDUuNjE3MTg4IEMgMTI5LjY2MDE1NiAxMDUuNTYyNSAxMjkuNzY5NTMxIDEwNS40NTMxMjUgMTI5LjgyNDIxOSAxMDUuMzgyODEyIEwgMTM4Ljc5Mjk2OSA4OS42NDA2MjUgQyAxNDMuNjA5Mzc1IDgwLjYzMjgxMiAxNTIuNjc5Njg4IDY1LjQwNjI1IDE1Ny43ODkwNjIgNTYuNTg5ODQ0IEMgMTU5LjQzNzUgNTMuNzUzOTA2IDE2MC44NDM3NSA1MS4yMzA0NjkgMTYyLjU5NzY1NiA0OC4yODEyNSBDIDE2Ny4wMDc4MTIgNDAuODc1IDE2Ni4wNjY0MDYgMzkuNDcyNjU2IDE3Mi43MTA5MzggMzkuODU1NDY5IEwgMjI1LjkxNzk2OSAzOS44Mzk4NDQgQyAyMjcuNTg1OTM4IDM4LjMxMjUgMjM2LjQyOTY4OCAyMy4zNTkzNzUgMjM3LjQxNDA2MiAyMC4zNTU0NjkgTCAxNTcuOTI1NzgxIDIwLjQxNzk2OSBDIDE1Ny4xMjg5MDYgMjIuNTc4MTI1IDE0Mi41MDM5MDYgNDcuNjkxNDA2IDEzOS45NjA5MzggNTIuMjc3MzQ0IEMgMTM3Ljg0Mzc1IDU2LjEwMTU2MiAxMzUuODUxNTYyIDU5LjMwNDY4OCAxMzMuNzM0Mzc1IDYzLjAxMTcxOSBDIDEyOS42NTIzNDQgNzAuMTYwMTU2IDEyNS45NzY1NjIgNzcuMzM1OTM4IDEyMS44NTE1NjIgODQuMjgxMjUgQyAxMjEuMDU0Njg4IDg1LjYyNSAxMTkuMDg1OTM4IDg4LjEwOTM3NSAxMTkuNzQyMTg4IDg5LjczMDQ2OSBaIE0gMTI5LjE0NDUzMSAxMDYuMDc4MTI1ICIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiMwMjMwNDciIGQ9Ik0gMTE1LjI2NTYyNSAxMzEuMzAwNzgxIEMgMTE2LjE2MDE1NiAxMzAuNjA1NDY5IDExOS4zNzg5MDYgMTI0LjIxODc1IDEyMC4zMjAzMTIgMTIyLjQ2ODc1IEMgMTI2LjE2MDE1NiAxMTEuNjA5Mzc1IDEyNy4wNDI5NjkgMTE1Ljk5NjA5NCAxMjAuNDgwNDY5IDEwNS4yNSBDIDExOC44NTkzNzUgMTAyLjYwMTU2MiAxMTcuMjE0ODQ0IDk5LjgwNDY4OCAxMTUuNjAxNTYyIDk3LjAxNTYyNSBMIDg2LjczNDM3NSA0Ni45MTc5NjkgTCA2Ni41IDQ2Ljc3NzM0NCBDIDY3LjE2NDA2MiA0OS4wMDc4MTIgNzYuNzQyMTg4IDY1LjAzNTE1NiA3OC42MjEwOTQgNjguMDcwMzEyIEwgOTAuNjc5Njg4IDg5LjE3NTc4MSBDIDk0Ljc3NzM0NCA5Ni4yNTc4MTIgOTguODI4MTI1IDEwMi44NDc2NTYgMTAyLjg3ODkwNiAxMTAuMTI1IEMgMTA0LjE0MDYyNSAxMTIuMzgyODEyIDExMy44MDg1OTQgMTI5LjgwMDc4MSAxMTUuMjY1NjI1IDEzMS4zMDA3ODEgIi8+Cjwvc3ZnPgo=">
+<meta property="og:title" content="Verlai · IA sob medida para negócios reais">
+<meta property="og:description" content="Organizamos os processos de pequenas e médias empresas e colocamos automação e IA só onde economizam tempo e dinheiro.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#023047">
+<meta name="description" content="A Verlai organiza os processos de pequenas e médias empresas e coloca automação e IA só onde economizam tempo e dinheiro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600&display=swap">
+<style>
+/* VOICE: consultor próximo e direto; calmo, sem hype, gestor falando com gestor.
+   IDEA: o mapa de processo que a Verlai desenha no diagnóstico — estrutura em linhas, automação como traço verde por cima (o mesmo gesto do logo).
+   PICTURE: mapa do caminho de um pedido, etapas manuais em contorno e o trecho automatizado riscado em verde.
+   COLOUR and TYPE: azul petróleo #023047 dominante, off-white #F7F7F5 de apoio, verde #94D2BD só como traço e destaque; Montserrat 800 nos títulos, Open Sans no texto.
+   LAYOUT: capa azul com o título e o mapa ocupando a largura; faixas off-white e brancas alternadas, conteúdo até 1180px, alinhado à esquerda. */
+:root{color-scheme:light;--azul:#023047;--verde:#94D2BD;--off:#F7F7F5;--branco:#fff;--cinza:#E5E5E5;--txt2:rgba(2,48,71,.75);--max:1180px}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--off);color:var(--azul);font:16.5px/1.6 "Open Sans",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Montserrat,system-ui,sans-serif;line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1{font-size:clamp(34px,5.2vw,58px);font-weight:800}
+h2{font-size:clamp(28px,3.4vw,42px);font-weight:800}
+h3{font-size:20px;font-weight:700;line-height:1.25}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 max(5vw,18px)}
+.band{padding:clamp(56px,8vw,112px) 0}
+.lead{font-size:clamp(17px,1.6vw,19px);max-width:62ch;color:var(--txt2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:6px;font:700 15.5px Montserrat,sans-serif;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid var(--verde);outline-offset:3px}
+.btn-verde{background:var(--verde);color:var(--azul)}
+.btn-verde:hover{background:#a9ddcb}
+.btn-linha{border-color:rgba(255,255,255,.55);color:#fff}
+.btn-linha:hover{border-color:#fff}
+.btn-azul{background:var(--azul);color:#fff}
+.btn-azul:hover{background:#0a3d57}
+/* topo */
+header{position:sticky;top:0;z-index:10;background:var(--azul);border-bottom:1px solid rgba(255,255,255,.1)}
+.nav{display:flex;align-items:center;gap:28px;min-height:72px}
+.logo{display:block;width:132px;flex:none}
+.logo svg{display:block;width:100%;height:auto}
+.nav ul{display:flex;gap:24px;list-style:none;margin:0 0 0 auto;padding:0;flex-wrap:wrap}
+.nav ul a{color:rgba(255,255,255,.85);text-decoration:none;font-weight:500;font-size:15px}
+.nav ul a:hover{color:#fff}
+.nav .btn{min-height:42px;padding:0 16px;font-size:14px}
+@media(max-width:860px){.nav ul{display:none}.nav .btn{margin-left:auto}}
+/* capa */
+.capa{background:var(--azul);color:#fff;padding:clamp(48px,7vw,96px) 0 0}
+.capa h1{max-width:18ch}
+.capa .lead{color:rgba(255,255,255,.82);margin-top:22px}
+.acoes{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.onde{margin-top:20px;font-size:14px;color:rgba(255,255,255,.7)}
+.mapa{margin-top:clamp(40px,6vw,72px);padding-bottom:clamp(36px,5vw,64px)}
+.mapa svg{display:block;width:100%;height:auto}
+.mapa .legenda{display:flex;gap:22px;flex-wrap:wrap;font-size:14px;color:rgba(255,255,255,.78);margin-top:14px}
+.mapa .legenda span::before{content:"";display:inline-block;width:22px;height:0;margin-right:8px;vertical-align:middle;border-top:2px solid rgba(255,255,255,.7)}
+.mapa .legenda .auto::before{border-top:5px solid var(--verde)}
+@keyframes risco{from{stroke-dashoffset:var(--len)}to{stroke-dashoffset:0}}
+.traco{stroke-dasharray:var(--len);animation:risco 1.8s .4s ease-out both}
+/* custo do manual */
+.custo{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(32px,5vw,72px);align-items:start}
+.custo ul{margin:24px 0 0;padding-left:20px;color:var(--txt2)}
+.custo li{margin:6px 0}
+.calc{background:#fff;border:1px solid var(--cinza);border-radius:10px;padding:28px}
+.calc h3{margin-bottom:18px}
+.campo{display:grid;grid-template-columns:minmax(0,1fr) 120px;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--cinza)}
+.campo label{font-size:15px}
+.campo input{width:100%;min-height:44px;font:600 16px "Open Sans",sans-serif;color:var(--azul);border:1px solid #c9d3d8;border-radius:6px;padding:0 10px;text-align:right;background:#fff}
+.resultado{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.resultado div{background:var(--azul);color:#fff;border-radius:8px;padding:16px}
+.resultado small{display:block;color:rgba(255,255,255,.75);font-size:13px}
+.resultado b{font:800 clamp(24px,3vw,30px) Montserrat,sans-serif;white-space:nowrap}
+.nota{font-size:13px;color:var(--txt2);margin-top:14px}
+@media(max-width:820px){.custo{grid-template-columns:1fr}}
+/* áreas */
+.branco{background:#fff}
+.areas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:44px;border-top:2px solid var(--azul)}
+.area{padding:24px 22px 8px 0}
+.area+.area{padding-left:22px;border-left:1px solid var(--cinza)}
+.area ul{list-style:none;margin:14px 0 0;padding:0}
+.area li{padding:10px 0;border-top:1px solid var(--cinza);font-size:15.5px}
+@media(max-width:960px){.areas{grid-template-columns:repeat(2,minmax(0,1fr))}.area:nth-child(3){padding-left:0;border-left:0}}
+@media(max-width:560px){.areas{grid-template-columns:1fr}.area,.area+.area{padding-left:0;border-left:0}}
+/* IA ou automação */
+.duas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:40px}
+.caixa{border-radius:10px;padding:28px}
+.caixa.auto{background:var(--azul);color:#fff}
+.caixa.ia{background:#fff;border:1px solid var(--cinza)}
+.caixa p{margin-top:10px}
+.caixa.auto p,.caixa.auto li{color:rgba(255,255,255,.85)}
+.caixa ul{margin:16px 0 0;padding-left:20px}
+.caixa li{margin:5px 0}
+.selo{display:inline-block;font:700 13px Montserrat,sans-serif;padding:4px 10px;border-radius:4px;margin-bottom:14px}
+.auto .selo{background:var(--verde);color:var(--azul)}
+.ia .selo{background:var(--off);border:1px solid var(--cinza)}
+@media(max-width:720px){.duas{grid-template-columns:1fr}}
+/* passos */
+.passos{list-style:none;margin:44px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,40px);counter-reset:p}
+.passos li{counter-increment:p;padding-top:18px;border-top:2px solid var(--azul)}
+.passos li::before{content:counter(p,decimal-leading-zero);display:block;font:800 40px/1 Montserrat,sans-serif;color:var(--azul);opacity:.25;margin-bottom:14px}
+.passos p{margin-top:10px;color:var(--txt2)}
+@media(max-width:760px){.passos{grid-template-columns:1fr}}
+/* comparação */
+.scroll{overflow-x:auto;margin-top:40px}
+table{width:100%;border-collapse:collapse;font-size:15px;background:#fff;border:1px solid var(--cinza);border-radius:10px;overflow:hidden}
+th,td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--cinza);vertical-align:top}
+thead th{font:700 15px Montserrat,sans-serif;background:var(--off)}
+tbody th{font-weight:600;width:18%}
+.col-v{background:#eef7f3}
+thead .col-v{background:var(--azul);color:#fff}
+@media(max-width:700px){table{font-size:14px}.stack thead{display:none}.stack tr{display:grid;padding:10px 14px;border-bottom:1px solid var(--cinza)}.stack th,.stack td{display:flow-root;border:0;padding:3px 0 3px 9.5em;width:auto}.stack tbody th{padding-left:0;font:700 15px Montserrat,sans-serif;margin-bottom:4px}.stack td::before{content:attr(data-l);float:left;width:9em;margin-left:-9.5em;font-weight:600;color:var(--txt2)}.col-v{background:#eef7f3;border-radius:4px}}
+/* ofertas */
+.ofertas{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.9fr);gap:20px;margin-top:44px;align-items:stretch}
+.oferta{background:#fff;border:1px solid var(--cinza);border-radius:10px;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column}
+.oferta.principal{background:var(--azul);color:#fff;border-color:var(--azul)}
+.preco{font:800 clamp(26px,3vw,34px) Montserrat,sans-serif;margin:14px 0 4px;white-space:nowrap}
+.preco small{display:block;font:500 15px "Open Sans",sans-serif;opacity:.8;white-space:normal;margin-top:4px}
+.oferta .sub{opacity:.85;font-size:15px}
+.oferta ul{margin:20px 0;padding-left:20px}
+.oferta li{margin:7px 0}
+.oferta .rodape{margin-top:auto;padding-top:18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.principal .meta{font-size:14px;color:rgba(255,255,255,.78)}
+.perfil{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
+.perfil div{background:#fff;border:1px solid var(--cinza);border-radius:10px;padding:24px}
+.perfil h3{font-size:17px;margin-bottom:10px}
+.perfil ul{margin:0;padding-left:20px;color:var(--txt2)}
+.perfil li{margin:5px 0}
+@media(max-width:860px){.ofertas,.perfil{grid-template-columns:1fr}}
+.ofertas.tres{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+.ofertas.tres .principal{transform:translateY(-12px);box-shadow:0 18px 40px rgba(2,48,71,.18)}
+.preco .de{display:block;font:500 14px "Open Sans",sans-serif;opacity:.8;margin:0 0 2px}
+.garantias{margin:6px 0 0;display:grid;gap:10px}.garantias div{border-top:1px solid rgba(255,255,255,.18);padding-top:10px}.garantias dt{font:700 14px Montserrat,sans-serif;color:var(--verde)}.garantias dd{margin:2px 0 0;font-size:14.5px;color:rgba(255,255,255,.88)}
+.selo-rec{align-self:flex-start;background:var(--verde);color:var(--azul);font:700 13px Montserrat,sans-serif;padding:4px 10px;border-radius:4px;margin-bottom:12px}
+.btn-linha-azul{border-color:var(--azul);color:var(--azul);background:transparent}
+.btn-linha-azul:hover{background:var(--off)}
+@media(max-width:960px){.ofertas.tres{grid-template-columns:1fr}.ofertas.tres .principal{transform:none;order:-1}}
+/* quem */
+.quem{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(28px,5vw,72px);align-items:center}
+.foto{aspect-ratio:4/5;border-radius:10px;background:var(--azul);display:grid;place-items:center;position:relative;overflow:hidden}
+.foto svg{width:46%;opacity:.95}
+.foto small{position:absolute;bottom:12px;left:0;right:0;text-align:center;color:rgba(255,255,255,.6);font-size:13px}
+.quem p+p{margin-top:16px}
+.quem .lead{color:var(--azul)}
+.assina{margin-top:22px;font:700 16px Montserrat,sans-serif}
+.assina span{display:block;font:400 14px "Open Sans",sans-serif;color:var(--txt2)}
+@media(max-width:760px){.quem{grid-template-columns:1fr}.foto{max-width:300px}}
+/* faq */
+.faq{margin-top:36px;max-width:820px}
+details{border-top:1px solid var(--cinza)}
+details:last-child{border-bottom:1px solid var(--cinza)}
+summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;font:700 17px Montserrat,sans-serif;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:6px;top:16px;font-size:26px;font-weight:600;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 22px;color:var(--txt2);max-width:68ch}
+/* raio-x */
+.raio{background:var(--azul);color:#fff}
+.raio-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:start}
+.raio .lead{color:rgba(255,255,255,.82);margin-top:18px}
+.raio ul{margin:22px 0 0;padding-left:20px;color:rgba(255,255,255,.88)}
+.raio li{margin:7px 0}
+.chat{background:#fff;color:var(--azul);border-radius:12px;overflow:hidden}
+.chat-topo{padding:16px 20px;border-bottom:1px solid var(--cinza);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.chat-topo b{font-family:Montserrat,sans-serif}
+.chat-topo span{font-size:13px;color:var(--txt2)}
+.msgs{padding:20px;min-height:220px;display:grid;gap:12px;align-content:start}
+.msg{background:var(--off);border-radius:10px 10px 10px 2px;padding:12px 14px;max-width:88%;font-size:15px}
+.chat form{display:flex;gap:8px;padding:14px;border-top:1px solid var(--cinza)}
+.chat input{flex:1;min-height:46px;border:1px solid #c9d3d8;border-radius:6px;padding:0 12px;font:16px "Open Sans",sans-serif;color:var(--azul)}
+.privacidade{font-size:13px;color:rgba(255,255,255,.7);margin-top:14px}
+.alt{margin-top:22px;font-size:15px;color:rgba(255,255,255,.85)}
+.alt a{color:var(--verde);font-weight:600}
+@media(max-width:860px){.raio-grid{grid-template-columns:1fr}}
+/* rodapé */
+footer{background:#01243a;color:rgba(255,255,255,.78);padding:48px 0 32px;font-size:15px}
+.pe{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}
+.pe h4{font:700 15px Montserrat,sans-serif;color:#fff;margin:0 0 12px}
+.pe ul{list-style:none;margin:0;padding:0}
+.pe li{margin:6px 0}
+.pe a{text-decoration:none}.pe a:hover{color:#fff;text-decoration:underline}
+.copy{margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);font-size:13px}
+@media(max-width:720px){.pe{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#topo" aria-label="Verlai, início"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="2.156 49.456 268.488 81.288">
+<path fill-rule="evenodd" fill="#FFFFFF" d="M 47.046875 120.679688 L 55.925781 120.699219 L 61.425781 110.894531 C 63.265625 107.664062 65.125 104.375 67.003906 101.128906 L 76.660156 84.003906 L 78.097656 81.550781 L 69.480469 81.570312 L 65.160156 89.15625 C 63.75 91.878906 62.320312 94.289062 60.820312 96.894531 C 59.324219 99.488281 58.011719 102.042969 56.480469 104.640625 C 55.695312 105.96875 54.996094 107.199219 54.261719 108.46875 L 51.96875 112.253906 C 51.375 111.65625 31.074219 76.316406 29.5625 73.546875 C 28.925781 72.382812 26.527344 68.550781 26.472656 67.804688 L 41.519531 67.769531 L 51.96875 85.269531 L 56.070312 77.828125 L 46.273438 60.59375 C 45.496094 59.191406 45.304688 59.515625 43.476562 59.511719 C 33.046875 59.476562 22.585938 59.476562 12.160156 59.546875 C 12.058594 60.492188 46.207031 119.21875 47.046875 120.679688 "/>
+<path fill-rule="evenodd" fill="#FFFFFF" d="M 167.210938 104.265625 C 168.046875 104.535156 172.558594 104.4375 173.71875 104.320312 L 173.875 96.605469 L 174.304688 96.429688 C 174.347656 96.417969 174.394531 96.402344 174.445312 96.394531 L 179.839844 96.410156 C 180.796875 97.519531 184.167969 103.105469 184.960938 103.984375 C 185.457031 104.539062 186.292969 104.371094 187.171875 104.367188 C 188.648438 104.363281 190.964844 104.492188 192.335938 104.308594 C 192.261719 103.742188 189.914062 100.460938 189.410156 99.6875 C 188.714844 98.617188 186.667969 96.121094 186.378906 95.050781 C 189.128906 93.429688 191.078125 91.847656 191.792969 88.25 C 192.5 84.695312 191.453125 81.292969 188.964844 78.90625 C 185.351562 75.445312 178.371094 75.925781 173.292969 75.960938 C 171.367188 75.972656 169.007812 75.816406 167.140625 76.019531 C 166.875 77.847656 167.003906 103.726562 167.210938 104.265625 Z M 253.984375 104.371094 L 260.664062 104.398438 L 260.625 76.039062 L 253.960938 75.972656 Z M 197.015625 77.761719 L 197.09375 104.347656 L 217.917969 104.339844 C 218.265625 103.484375 218.132812 100.09375 218.03125 98.992188 L 203.832031 98.851562 L 203.757812 78.089844 C 203.761719 75.523438 204.246094 76 200.5625 75.980469 C 199.710938 75.976562 198.777344 75.949219 197.929688 75.984375 C 196.707031 76.035156 197.019531 76.457031 197.015625 77.761719 Z M 118.144531 104.324219 L 124.824219 104.40625 C 125.863281 102.128906 126.8125 99.683594 127.839844 97.300781 C 128.839844 94.976562 129.914062 92.695312 130.9375 90.273438 C 131.734375 88.386719 136.585938 77.617188 136.984375 76.027344 L 130.292969 75.972656 C 129.003906 79.253906 127.480469 82.703125 126.105469 86.089844 L 123.894531 91.066406 C 123.421875 92.074219 122.179688 95.671875 121.460938 96.121094 C 120.992188 94.613281 120.039062 92.527344 119.363281 91.027344 L 113.960938 78.472656 C 113.761719 78.007812 113.589844 77.695312 113.410156 77.230469 C 113.3125 76.980469 113.019531 76.164062 112.742188 76.0625 L 105.796875 75.984375 L 111.875 90.199219 C 112.910156 92.46875 114.078125 94.890625 115.019531 97.171875 C 115.878906 99.265625 117.0625 102.503906 118.144531 104.324219 Z M 139.941406 104.261719 L 162.140625 104.351562 L 162.1875 98.992188 L 146.609375 98.917969 C 146.339844 98.246094 146.398438 93.324219 146.601562 92.546875 C 149.367188 92.503906 159.089844 92.640625 159.832031 92.398438 L 159.867188 87.449219 C 158.648438 87.179688 147.648438 87.339844 146.558594 87.339844 C 146.332031 86.433594 146.414062 82.421875 146.53125 81.378906 C 151.195312 81.226562 156.945312 81.335938 161.519531 81.359375 L 161.574219 76.015625 L 139.816406 75.949219 Z M 219.003906 104.351562 L 225.59375 104.363281 L 228.144531 98.519531 L 241.597656 98.398438 L 244.1875 104.335938 L 251.125 104.351562 L 244.398438 89.605469 C 243.265625 87.140625 242.136719 84.632812 241.03125 82.199219 L 238.5625 76.664062 C 238.097656 75.679688 237.738281 75.960938 236.488281 75.964844 L 231.304688 75.96875 C 230.210938 78.136719 229.304688 80.796875 228.261719 83.082031 L 223.589844 93.601562 C 222.804688 95.515625 219.109375 103.140625 219.003906 104.351562 Z M 230.632812 93.164062 L 239.164062 93.203125 C 239.195312 92.773438 235.121094 83.171875 234.855469 82.871094 C 234.234375 83.351562 232.027344 88.949219 231.386719 90.464844 C 230.996094 91.390625 230.300781 92.652344 230.632812 93.164062 Z M 173.949219 81.355469 C 173.777344 82.9375 173.8125 87.082031 173.8125 89.027344 C 173.808594 91.382812 173.003906 91.113281 179.621094 90.917969 C 181.421875 90.867188 182.605469 90.546875 183.710938 89.648438 C 185.941406 87.832031 187.914062 79.746094 173.949219 81.355469 "/>
+<path fill-rule="evenodd" fill="#FFFFFF" d="M 71.425781 78.390625 L 82.886719 78.460938 C 83.15625 79.277344 61.496094 116.8125 59.277344 120.738281 L 68.773438 120.722656 L 97.289062 70.804688 L 75.660156 70.746094 Z M 71.425781 78.390625 "/>
+<path fill-rule="evenodd" fill="#94D2BD" d="M 57.847656 95.824219 L 58.046875 95.628906 C 58.066406 95.605469 58.113281 95.558594 58.136719 95.53125 L 61.933594 88.863281 C 63.972656 85.050781 67.8125 78.597656 69.980469 74.867188 C 70.675781 73.664062 71.273438 72.59375 72.015625 71.347656 C 73.882812 68.210938 73.484375 67.617188 76.300781 67.777344 L 98.832031 67.773438 C 99.539062 67.125 103.285156 60.792969 103.703125 59.519531 L 70.035156 59.546875 C 69.699219 60.460938 63.503906 71.097656 62.429688 73.039062 C 61.53125 74.660156 60.6875 76.015625 59.792969 77.585938 C 58.0625 80.613281 56.503906 83.652344 54.757812 86.59375 C 54.421875 87.160156 53.585938 88.214844 53.867188 88.902344 Z M 57.847656 95.824219 "/>
+<path fill-rule="evenodd" fill="#FFFFFF" d="M 51.96875 106.507812 C 52.347656 106.214844 53.710938 103.507812 54.109375 102.765625 C 56.582031 98.167969 56.957031 100.027344 54.175781 95.476562 C 53.492188 94.351562 52.792969 93.167969 52.113281 91.988281 L 39.886719 70.769531 L 31.316406 70.710938 C 31.597656 71.65625 35.652344 78.441406 36.449219 79.726562 L 41.554688 88.667969 C 43.292969 91.667969 45.007812 94.457031 46.722656 97.539062 C 47.257812 98.496094 51.351562 105.871094 51.96875 106.507812 "/>
+</svg></a>
+    <ul>
+      <li><a href="#como">Como funciona</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#quem">Quem somos</a></li>
+      <li><a href="#perguntas">Perguntas</a></li>
+    </ul>
+    <a class="btn btn-verde" href="#conversa">Conversa gratuita</a>
+  </div>
+</header>
+
+<main id="topo">
+<section class="capa">
+  <div class="wrap">
+    <h1>Processos bagunçados e nenhuma ideia de por onde começar a automatizar?</h1>
+    <p class="lead">A Verlai organiza a operação de pequenas e médias empresas e coloca automação e IA só onde economizam tempo e dinheiro. Começamos pela gestão, para que o que a gente entrega seja usado no dia a dia.</p>
+    <div class="acoes">
+      <a class="btn btn-verde" href="#conversa">Marcar uma conversa gratuita</a>
+      <a class="btn btn-linha" href="https://wa.me/5511934840103">Falar no WhatsApp</a>
+    </div>
+
+    <p class="onde" style="margin-top:clamp(40px,6vw,72px);color:#fff;font-weight:600">Exemplo: o caminho de um pedido, antes e depois de automatizar</p>
+    <figure class="mapa" style="margin-top:12px" aria-label="Exemplo: o caminho de um pedido, com as etapas manuais e o trecho automatizado">
+      <svg viewBox="0 0 1100 250" role="img">
+        <title>O caminho de um pedido: seis etapas, três delas automatizadas</title>
+        <g fill="none" stroke="rgba(255,255,255,.55)" stroke-width="2">
+          <path d="M150 85 H230 M380 85 H460 M610 85 H690 M840 85 H920"/>
+          <path d="M995 120 V165 Q995 195 965 195 H135 Q105 195 105 165 V120" stroke-dasharray="6 6"/>
+        </g>
+        <g font-family="Open Sans, sans-serif" font-size="17" fill="#fff" text-anchor="middle">
+          <g><rect x="30" y="50" width="150" height="70" rx="6" fill="#023047" stroke="rgba(255,255,255,.7)" stroke-width="2"/><text x="105" y="91">Pedido chega</text></g>
+          <g><rect x="230" y="50" width="150" height="70" rx="6" fill="#023047" stroke="rgba(255,255,255,.7)" stroke-width="2"/><text x="305" y="91">Confere dados</text></g>
+          <g><rect x="460" y="50" width="150" height="70" rx="6" fill="#023047" stroke="rgba(255,255,255,.7)" stroke-width="2"/><text x="535" y="91">Cliente aprova</text></g>
+          <g><rect x="690" y="50" width="150" height="70" rx="6" fill="#023047" stroke="rgba(255,255,255,.7)" stroke-width="2"/><text x="765" y="91">Execução</text></g>
+          <g><rect x="920" y="50" width="150" height="70" rx="6" fill="#023047" stroke="rgba(255,255,255,.7)" stroke-width="2"/><text x="995" y="91">Entrega e cobra</text></g>
+        </g>
+        <path class="traco" style="--len:540" d="M305 44 V24 H765 V44 M535 24 V44" fill="none" stroke="#94D2BD" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <g font-family="Open Sans, sans-serif" font-size="14" fill="rgba(255,255,255,.75)" text-anchor="middle">
+          <text x="105" y="145">à mão · 15 min</text><text x="305" y="145">automático</text><text x="535" y="145">automático</text><text x="765" y="145">automático</text><text x="995" y="145">à mão · 10 min</text>
+          <text x="550" y="230">retrabalho: o que volta quando algo sai errado</text>
+        </g>
+      </svg>
+      <figcaption class="legenda"><span>etapa feita à mão</span><span class="auto">trecho automatizado</span><span style="opacity:.8">Exemplo ilustrativo.</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="band" id="custo">
+  <div class="wrap custo">
+    <div>
+      <h2>Quanto custa o trabalho que alguém faz à mão?</h2>
+      <p class="lead" style="margin-top:18px">Copiar dado de um lugar para outro, conferir planilha, cobrar pagamento, refazer o que deu errado. Cada tarefa parece pequena, mas o custo se repete todo mês e quase ninguém mede.</p>
+      <ul>
+        <li>Horas de gente boa presa em tarefa repetitiva.</li>
+        <li>Erros que voltam como retrabalho, desconto ou cliente insatisfeito.</li>
+        <li>Informação que só uma pessoa sabe onde está.</li>
+      </ul>
+    </div>
+    <form class="calc" id="calc" aria-labelledby="calc-t">
+      <h3 id="calc-t">Faça a conta de uma tarefa</h3>
+      <div class="campo"><label for="c-pessoas">Pessoas que fazem a tarefa</label><input id="c-pessoas" type="number" min="1" step="1" value="2" inputmode="numeric"></div>
+      <div class="campo"><label for="c-horas">Horas por dia, por pessoa</label><input id="c-horas" type="number" min="0" step="0.5" value="1.5" inputmode="decimal"></div>
+      <div class="campo"><label for="c-custo">Custo da hora (R$), com encargos</label><input id="c-custo" type="number" min="0" step="1" value="30" inputmode="decimal"></div>
+      <div class="resultado" aria-live="polite">
+        <div><small>Por mês</small><b id="r-mes">R$ 0</b></div>
+        <div><small>Por ano</small><b id="r-ano">R$ 0</b></div>
+      </div>
+      <p class="nota">Conta simples, com 22 dias úteis por mês e sem contar erros e retrabalho. Na conversa gratuita, a gente faz essa conta com o seu processo de verdade.</p>
+    </form>
+  </div>
+</section>
+
+<section class="band branco" id="como">
+  <div class="wrap">
+    <h2>O que resolvemos</h2>
+    <p class="lead" style="margin-top:16px">Exemplos do dia a dia de pequenas empresas. Cada negócio tem as suas prioridades, e a conversa gratuita mostra quais valem a pena para você.</p>
+    <div class="areas">
+      <div class="area"><h3>Comércio e varejo</h3><ul>
+        <li>Lembrete automático para o orçamento que ficou sem resposta.</li>
+        <li>Estoque que avisa quando é hora de repor.</li>
+        <li>Relatório diário de vendas e caixa, sem montar planilha.</li></ul></div>
+      <div class="area"><h3>Clínicas, escolas e escritórios</h3><ul>
+        <li>Agendamentos confirmados e lembrados automaticamente.</li>
+        <li>Cobrança automática de mensalidades e boletos em atraso.</li>
+        <li>Pagamentos do mês conferidos num só lugar.</li></ul></div>
+      <div class="area"><h3>Indústria e produção</h3><ul>
+        <li>Orçamento que o cliente abre e aprova por um link.</li>
+        <li>Pedido acompanhado do orçamento à entrega, com cada etapa visível.</li>
+        <li>Lista de compras e plano de produção gerados a partir dos pedidos.</li></ul></div>
+      <div class="area"><h3>Distribuição e atacado</h3><ul>
+        <li>Pagamentos conciliados com o extrato do banco.</li>
+        <li>Comissões calculadas sozinhas, sem planilha paralela.</li>
+        <li>Notas fiscais emitidas e enviadas automaticamente.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>Nem tudo precisa de IA</h2>
+    <p class="lead" style="margin-top:16px">A maior parte do que resolvemos é automação simples, que segue regras claras e não tem custo mensal de IA. A inteligência artificial entra só onde uma regra não dá conta, como ler uma mensagem escrita do jeito de cada cliente.</p>
+  </div>
+</section>
+
+<section class="band branco">
+  <div class="wrap">
+    <h2>Como trabalhamos</h2>
+    <ol class="passos">
+      <li><h3>Olhamos o processo antes da tecnologia</h3><p>Entendemos como o trabalho acontece de verdade.</p></li>
+      <li><h3>Medimos antes e depois</h3><p>Tempo, erros e custo, para saber se valeu a pena.</p></li>
+      <li><h3>Automatizamos só onde compensa</h3><p>Se não vale o investimento, dizemos.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band" id="servicos">
+  <div class="wrap">
+    <h2>Por onde começar</h2>
+    <p class="lead" style="margin-top:16px">Três jeitos de começar, conforme o tamanho do problema. Todos começam com uma conversa gratuita.</p>
+    <div class="ofertas tres">
+      <article class="oferta">
+        <h3>Automação Essencial</h3>
+        <p class="sub">Para uma tarefa simples, que quase toda empresa tem.</p>
+        <p class="preco"><small class="de">a partir de</small>R$ 690</p>
+        <ul>
+          <li>Uma automação de um modelo testado, configurada para a sua empresa</li>
+          <li>Exemplos: lembrete de cobrança, confirmação de agendamento, resumo diário por e-mail</li>
+          <li>Pronta em até 1 semana</li>
+        </ul>
+        <div class="rodape"><a class="btn btn-linha-azul" href="https://wa.me/5511934840103?text=Ol%C3%A1%2C%20tenho%20interesse%20na%20Automa%C3%A7%C3%A3o%20Essencial.">Quero uma automação simples</a></div>
+      </article>
+      <article class="oferta principal">
+        <span class="selo-rec">Recomendado</span>
+        <h3>Automação Sob Medida</h3>
+        <p class="sub">Um processo da sua empresa funcionando sozinho, do jeito que ela trabalha.</p>
+        <p class="preco"><small class="de">a partir de</small>R$ 1.500</p>
+        <p class="meta" style="margin:0 0 4px">A maioria fica entre R$ 1.500 e R$ 2.500.</p>
+        <ul>
+          <li>Levantamento com quem executa, escopo fechado por escrito</li>
+          <li>Testes com os seus dados reais e treinamento de quem vai usar</li>
+          <li>30 dias de ajustes depois da entrega</li>
+        </ul>
+        <dl class="garantias">
+          <div><dt>Seu tempo</dt><dd>1 conversa de 1 hora e 1 validação de 30 minutos. Se quem faz o processo é você mesmo, a gente encaixa as conversas no seu horário, até pelo WhatsApp.</dd></div>
+          <div><dt>Pagamento</dt><dd>50% para começar e 50% só depois de funcionando.</dd></div>
+          <div><dt>Sem dependência</dt><dd>Fica documentada, roda em contas no nome da sua empresa e outro profissional consegue dar manutenção.</dd></div>
+          <div><dt>Depois da entrega</dt><dd>Suporte opcional, sem fidelidade.</dd></div>
+        </dl>
+        <p class="meta" style="margin-top:14px">Já fez a Essencial? O valor dela é abatido se você passar para a Sob Medida em até 60 dias.</p>
+        <div class="rodape"><a class="btn btn-verde" href="https://wa.me/5511934840103?text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20um%20processo%20da%20minha%20empresa.">Conversar sobre o meu processo</a><span class="meta">1 a 3 semanas.</span></div>
+      </article>
+      <article class="oferta">
+        <h3>Projeto Completo</h3>
+        <p class="sub">Para quem tem vários processos misturados e não sabe por onde começar.</p>
+        <p class="preco"><small class="de">investimento</small>Sob consulta</p>
+        <ul>
+          <li>Diagnóstico de todos os processos, feito com a sua equipe</li>
+          <li>Lista do que automatizar primeiro, com custo e benefício estimados</li>
+          <li>Implementação das automações prioritárias</li>
+          <li>3 meses de acompanhamento e melhorias</li>
+          <li>Uma resposta honesta se ainda não for a hora de automatizar</li>
+        </ul>
+        <div class="rodape"><a class="btn btn-azul" href="https://wa.me/5511934840103?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20um%20Projeto%20Completo.">Fale com o João</a><span class="nota" style="margin:0">6 a 10 semanas.</span></div>
+      </article>
+    </div>
+    <div class="perfil">
+      <div><h3>É para você se</h3><ul><li>Tem processos manuais que tomam tempo ou dão erro</li><li>Quer usar tecnologia, mas não sabe por onde começar</li><li>Está disposto a participar e mudar a rotina</li></ul></div>
+      <div><h3>Ainda não é para você se</h3><ul><li>Não quer mudar nada na forma de trabalhar</li><li>Ninguém na empresa vai ter tempo de acompanhar o projeto</li><li>Espera resultado da noite para o dia, sem testar e ajustar junto</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="band branco" id="quem">
+  <div class="wrap" style="max-width:860px">
+        <div>
+      <h2>Quem está por trás</h2>
+      <p class="lead" style="margin-top:20px">Sou o João Victor Carneiro. Antes de abrir a Verlai, passei anos dentro da operação: fui gerente de operações de uma gráfica, cuidando de pedidos, equipe, fornecedores e financeiro, e tive meu próprio negócio. Sei como é o dia de quem apaga incêndio, porque vivi isso.</p>
+      <p>Sou administrador com MBA em Inteligência Artificial. Mas não começo pela tecnologia: começo entendendo como a sua empresa funciona de verdade. A automação e a IA entram depois, onde fazem diferença.</p>
+      <p>Na Verlai, você fala direto comigo, da primeira conversa à entrega.</p>
+      <p class="assina">João Victor Carneiro<span>Fundador e consultor da Verlai</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="perguntas">
+  <div class="wrap">
+    <h2>Perguntas frequentes</h2>
+    <div class="faq">
+      <details><summary>Preciso entender de tecnologia?</summary><p>Não. Você conhece o seu negócio, e é disso que precisamos. A parte técnica fica com a gente, e tudo é explicado em termos de tempo, dinheiro e erro.</p></details>
+      <details><summary>Funciona para empresa pequena?</summary><p>Sim, é para elas que a Verlai existe. Começamos pelo que traz mais retorno e, se um processo for pequeno demais para valer o investimento, dizemos isso.</p></details>
+      <details><summary>Já tenho um sistema ou ERP. Preciso trocar?</summary><p>Na maioria das vezes, não. A gente trabalha em cima do sistema que você já usa. Na conversa gratuita, verificamos se o que você precisa já existe nele. Se existir, você fica sabendo antes de gastar.</p></details>
+      <details><summary>Vocês cuidam de servidores, redes e computadores?</summary><p>Não. A Verlai trabalha com processos, automação e IA. Infraestrutura de TI, tráfego pago, redes sociais e contabilidade ficam fora do nosso escopo.</p></details>
+      <details><summary>Quanto tempo eu vou precisar dedicar?</summary><p>Na Automação Sob Medida, de você são 1 conversa de 1 hora e 1 validação de 30 minutos. Se quem faz o processo é você mesmo, a gente encaixa as conversas no seu horário, até pelo WhatsApp. Nos projetos maiores, o tempo é combinado antes, por escrito.</p></details>
+      <details><summary>E se eu precisar de manutenção e o João não puder atender?</summary><p>Toda automação é entregue documentada e roda em contas no nome da sua empresa. Assim, outro profissional consegue entender e dar manutenção. Depois dos 30 dias de ajustes, você escolhe: seguir por conta própria, contratar o Suporte (a partir de R$ 350/mês: monitoramento, correções e pequenos ajustes) ou o Acompanhamento (a partir de R$ 1.200/mês: suporte e uma melhoria nova por mês).</p></details>
+      <details><summary>E se a minha equipe não usar?</summary><p>Por isso o treinamento faz parte da entrega, e nos 30 dias de ajustes a gente acompanha o uso de perto. Se alguém não estiver usando, a gente descobre o motivo e ajusta a automação ou o processo. Uma ferramenta que ninguém usa não resolve nada, e a gente sabe disso.</p></details>
+      <details><summary>Quanto custa?</summary><p>A Automação Essencial começa em R$ 690. A Sob Medida começa em R$ 1.500, e a maioria fica entre R$ 1.500 e R$ 2.500. Suporte depois da entrega a partir de R$ 350/mês. O Projeto Completo é orçado depois de uma conversa, porque depende de quantos processos entram. As ferramentas que a solução usar (como o servidor onde a automação roda ou o envio de mensagens pelo WhatsApp) são pagas direto pela sua empresa, sem intermediação. Antes de começar, você recebe por escrito quanto elas vão custar por mês, para aprovar. Em muitos casos o custo é zero, porque a automação usa as planilhas e o e-mail que a empresa já tem.</p></details>
+      <details><summary>E os dados da minha empresa?</summary><p>Ficam nas ferramentas da sua empresa e são tratados com sigilo, seguindo a LGPD, com contrato. Não usamos seus dados para treinar modelos de IA.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="band raio" id="conversa">
+  <div class="wrap raio-grid">
+    <div>
+      <h2>Conversa gratuita sobre o processo que mais pesa</h2>
+      <p class="lead">30 minutos, por vídeo ou WhatsApp, no horário que for melhor para você. Você conta como o processo funciona hoje e a gente olha junto:</p>
+      <ul>
+        <li>Quanto esse processo custa por mês, entre tempo e erros</li>
+        <li>Se dá para automatizar, e o que precisa ser organizado antes</li>
+        <li>Qual das três opções faz sentido, ou se ainda não é a hora</li>
+      </ul>
+      <p class="alt">Sem compromisso e sem apresentação de vendas.</p>
+    </div>
+    <div class="chat" style="padding:28px">
+      <h3 style="margin-bottom:12px">Para adiantar, mande no WhatsApp:</h3>
+      <ol style="margin:0 0 22px;padding-left:20px;line-height:1.7">
+        <li>O que a sua empresa faz</li>
+        <li>O processo que mais toma tempo ou dá erro</li>
+        <li>Quem faz esse processo hoje</li>
+      </ol>
+      <a class="btn btn-azul" style="width:100%" href="https://wa.me/5511934840103?text=Ol%C3%A1%2C%20quero%20marcar%20a%20conversa%20gratuita.%20Minha%20empresa%3A%20%20%7C%20Processo%20que%20mais%20pesa%3A%20%20%7C%20Quem%20faz%20hoje%3A%20">Marcar pelo WhatsApp</a>
+      <p class="nota" style="margin-top:12px">(11) 93484-0103 · verlaiconsultoria@gmail.com</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="pe">
+      <div><a class="logo" href="#topo" aria-label="Verlai, início" style="width:150px"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="2.156 49.456 268.488 81.288">
+<path fill-rule="evenodd" fill="#FFFFFF" d="M 47.046875 120.679688 L 55.925781 120.699219 L 61.425781 110.894531 C 63.265625 107.664062 65.125 104.375 67.003906 101.128906 L 76.660156 84.003906 L 78.097656 81.550781 L 69.480469 81.570312 L 65.160156 89.15625 C 63.75 91.878906 62.320312 94.289062 60.820312 96.894531 C 59.324219 99.488281 58.011719 102.042969 56.480469 104.640625 C 55.695312 105.96875 54.996094 107.199219 54.261719 108.46875 L 51.96875 112.253906 C 51.375 111.65625 31.074219 76.316406 29.5625 73.546875 C 28.925781 72.382812 26.527344 68.550781 26.472656 67.804688 L 41.519531 67.769531 L 51.96875 85.269531 L 56.070312 77.828125 L 46.273438 60.59375 C 45.496094 59.191406 45.304688 59.515625 43.476562 59.511719 C 33.046875 59.476562 22.585938 59.476562 12.160156 59.546875 C 12.058594 60.492188 46.207031 119.21875 47.046875 120.679688 "/>
+<path fill-rule="evenodd" fill="#FFFFFF" d="M 167.210938 104.265625 C 168.046875 104.535156 172.558594 104.4375 173.71875 104.320312 L 173.875 96.605469 L 174.304688 96.429688 C 174.347656 96.417969 174.394531 96.402344 174.445312 96.394531 L 179.839844 96.410156 C 180.796875 97.519531 184.167969 103.105469 184.960938 103.984375 C 185.457031 104.539062 186.292969 104.371094 187.171875 104.367188 C 188.648438 104.363281 190.964844 104.492188 192.335938 104.308594 C 192.261719 103.742188 189.914062 100.460938 189.410156 99.6875 C 188.714844 98.617188 186.667969 96.121094 186.378906 95.050781 C 189.128906 93.429688 191.078125 91.847656 191.792969 88.25 C 192.5 84.695312 191.453125 81.292969 188.964844 78.90625 C 185.351562 75.445312 178.371094 75.925781 173.292969 75.960938 C 171.367188 75.972656 169.007812 75.816406 167.140625 76.019531 C 166.875 77.847656 167.003906 103.726562 167.210938 104.265625 Z M 253.984375 104.371094 L 260.664062 104.398438 L 260.625 76.039062 L 253.960938 75.972656 Z M 197.015625 77.761719 L 197.09375 104.347656 L 217.917969 104.339844 C 218.265625 103.484375 218.132812 100.09375 218.03125 98.992188 L 203.832031 98.851562 L 203.757812 78.089844 C 203.761719 75.523438 204.246094 76 200.5625 75.980469 C 199.710938 75.976562 198.777344 75.949219 197.929688 75.984375 C 196.707031 76.035156 197.019531 76.457031 197.015625 77.761719 Z M 118.144531 104.324219 L 124.824219 104.40625 C 125.863281 102.128906 126.8125 99.683594 127.839844 97.300781 C 128.839844 94.976562 129.914062 92.695312 130.9375 90.273438 C 131.734375 88.386719 136.585938 77.617188 136.984375 76.027344 L 130.292969 75.972656 C 129.003906 79.253906 127.480469 82.703125 126.105469 86.089844 L 123.894531 91.066406 C 123.421875 92.074219 122.179688 95.671875 121.460938 96.121094 C 120.992188 94.613281 120.039062 92.527344 119.363281 91.027344 L 113.960938 78.472656 C 113.761719 78.007812 113.589844 77.695312 113.410156 77.230469 C 113.3125 76.980469 113.019531 76.164062 112.742188 76.0625 L 105.796875 75.984375 L 111.875 90.199219 C 112.910156 92.46875 114.078125 94.890625 115.019531 97.171875 C 115.878906 99.265625 117.0625 102.503906 118.144531 104.324219 Z M 139.941406 104.261719 L 162.140625 104.351562 L 162.1875 98.992188 L 146.609375 98.917969 C 146.339844 98.246094 146.398438 93.324219 146.601562 92.546875 C 149.367188 92.503906 159.089844 92.640625 159.832031 92.398438 L 159.867188 87.449219 C 158.648438 87.179688 147.648438 87.339844 146.558594 87.339844 C 146.332031 86.433594 146.414062 82.421875 146.53125 81.378906 C 151.195312 81.226562 156.945312 81.335938 161.519531 81.359375 L 161.574219 76.015625 L 139.816406 75.949219 Z M 219.003906 104.351562 L 225.59375 104.363281 L 228.144531 98.519531 L 241.597656 98.398438 L 244.1875 104.335938 L 251.125 104.351562 L 244.398438 89.605469 C 243.265625 87.140625 242.136719 84.632812 241.03125 82.199219 L 238.5625 76.664062 C 238.097656 75.679688 237.738281 75.960938 236.488281 75.964844 L 231.304688 75.96875 C 230.210938 78.136719 229.304688 80.796875 228.261719 83.082031 L 223.589844 93.601562 C 222.804688 95.515625 219.109375 103.140625 219.003906 104.351562 Z M 230.632812 93.164062 L 239.164062 93.203125 C 239.195312 92.773438 235.121094 83.171875 234.855469 82.871094 C 234.234375 83.351562 232.027344 88.949219 231.386719 90.464844 C 230.996094 91.390625 230.300781 92.652344 230.632812 93.164062 Z M 173.949219 81.355469 C 173.777344 82.9375 173.8125 87.082031 173.8125 89.027344 C 173.808594 91.382812 173.003906 91.113281 179.621094 90.917969 C 181.421875 90.867188 182.605469 90.546875 183.710938 89.648438 C 185.941406 87.832031 187.914062 79.746094 173.949219 81.355469 "/>
+<path fill-rule="evenodd" fill="#FFFFFF" d="M 71.425781 78.390625 L 82.886719 78.460938 C 83.15625 79.277344 61.496094 116.8125 59.277344 120.738281 L 68.773438 120.722656 L 97.289062 70.804688 L 75.660156 70.746094 Z M 71.425781 78.390625 "/>
+<path fill-rule="evenodd" fill="#94D2BD" d="M 57.847656 95.824219 L 58.046875 95.628906 C 58.066406 95.605469 58.113281 95.558594 58.136719 95.53125 L 61.933594 88.863281 C 63.972656 85.050781 67.8125 78.597656 69.980469 74.867188 C 70.675781 73.664062 71.273438 72.59375 72.015625 71.347656 C 73.882812 68.210938 73.484375 67.617188 76.300781 67.777344 L 98.832031 67.773438 C 99.539062 67.125 103.285156 60.792969 103.703125 59.519531 L 70.035156 59.546875 C 69.699219 60.460938 63.503906 71.097656 62.429688 73.039062 C 61.53125 74.660156 60.6875 76.015625 59.792969 77.585938 C 58.0625 80.613281 56.503906 83.652344 54.757812 86.59375 C 54.421875 87.160156 53.585938 88.214844 53.867188 88.902344 Z M 57.847656 95.824219 "/>
+<path fill-rule="evenodd" fill="#FFFFFF" d="M 51.96875 106.507812 C 52.347656 106.214844 53.710938 103.507812 54.109375 102.765625 C 56.582031 98.167969 56.957031 100.027344 54.175781 95.476562 C 53.492188 94.351562 52.792969 93.167969 52.113281 91.988281 L 39.886719 70.769531 L 31.316406 70.710938 C 31.597656 71.65625 35.652344 78.441406 36.449219 79.726562 L 41.554688 88.667969 C 43.292969 91.667969 45.007812 94.457031 46.722656 97.539062 C 47.257812 98.496094 51.351562 105.871094 51.96875 106.507812 "/>
+</svg></a><p style="margin-top:14px">IA sob medida para negócios reais.</p></div>
+      <div><h4>A Verlai</h4><ul><li><a href="#como">Como funciona</a></li><li><a href="#servicos">Serviços</a></li><li><a href="#quem">Quem somos</a></li><li><a href="#conversa">Conversa gratuita</a></li></ul></div>
+      <div><h4>Fale com a gente</h4><ul><li><a href="https://wa.me/5511934840103">WhatsApp (11) 93484-0103</a></li><li>verlaiconsultoria@gmail.com</li><li><a href="https://www.instagram.com/verlai.consultoria/">Instagram</a></li><li><a href="https://www.linkedin.com/company/verlai">LinkedIn</a></li></ul></div>
+    </div>
+    <p class="copy">© 2026 Verlai.</p>
+  </div>
+</footer>
+
+<script>
+{
+  const brl = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
+  const num = id => Math.max(0, parseFloat(document.getElementById(id).value.replace(',', '.')) || 0);
+  const conta = () => {
+    const mes = num('c-pessoas') * num('c-horas') * num('c-custo') * 22;
+    document.getElementById('r-mes').textContent = brl(mes);
+    document.getElementById('r-ano').textContent = brl(mes * 12);
+  };
+  document.getElementById('calc').addEventListener('input', conta);
+  document.getElementById('calc').addEventListener('submit', e => e.preventDefault());
+  conta();
+
+}
+</script>
+</body>
+</html>
